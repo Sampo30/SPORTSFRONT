@@ -1,50 +1,48 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import CreatePlayer from './pages/CreatePlayer';
+import FetchPlayer from './pages/FetchPlayer';
+import UpdatePlayer from './pages/UpdatePlayer';
+import DeletePlayer from './pages/DeletePlayer';
+import FetchAllPlayers from './pages/FetchAllPlayers';
+import Header from './components/Header';
 
-const App = () => {
-  const [players, setPlayers] = useState([]);
-
-  useEffect(() => {
-    fetchPlayers();
-  }, []);
-
-  const fetchPlayers = async () => {
-    try {
-      const response = await axios.get('/players'); // Make sure to use the correct route path
-      setPlayers(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const createPlayer = async () => {
-    try {
-      const newPlayer = {
-        name: 'John Doe', // Replace with the desired player data
-        age: 25,
-        position: 'Forward',
-      };
-
-      const response = await axios.post('/players', newPlayer); // Make sure to use the correct route path
-      console.log(response.data);
-      fetchPlayers(); // Refresh the player list after creating a new player
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+function App() {
   return (
-    <div>
-      <h1>Floorball Team Database</h1>
-      <button onClick={createPlayer}>Create Player</button>
-      {/* Add other buttons for different routes */}
-      <ul>
-        {players.map((player) => (
-          <li key={player._id}>{player.name}</li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <div>
+        <Header />
+
+        <nav>
+          <ul>
+            <li>
+              <Link to="/create-player">Create Player</Link>
+            </li>
+            <li>
+              <Link to="/fetch-player">Fetch Player</Link>
+            </li>
+            <li>
+              <Link to="/update-player">Update Player</Link>
+            </li>
+            <li>
+              <Link to="/delete-player">Delete Player</Link>
+            </li>
+            <li>
+              <Link to="/fetch-all-players">Fetch All Players</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/create-player" element={<CreatePlayer />} />
+          <Route path="/fetch-player" element={<FetchPlayer />} />
+          <Route path="/update-player" element={<UpdatePlayer />} />
+          <Route path="/delete-player" element={<DeletePlayer />} />
+          <Route path="/fetch-all-players" element={<FetchAllPlayers />} />
+        </Routes>
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;
