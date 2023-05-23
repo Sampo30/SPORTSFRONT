@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import CreatePlayer from './pages/CreatePlayer';
 import FetchPlayer from './pages/FetchPlayer';
 import UpdatePlayer from './pages/UpdatePlayer';
 import DeletePlayer from './pages/DeletePlayer';
 import FetchAllPlayers from './pages/FetchAllPlayers';
-import Header from './components/Header';
+import './App.css';
 
-function App() {
+
+const App = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <Router>
-      <div>
-        <Header />
+      <div className="app-container">
+        <button className="menu-toggle" onClick={handleMenuToggle}>
+          <span className="menu-icon"></span>
+        </button>
 
-        <nav>
+        <nav className={`menu ${isMenuOpen ? 'open' : ''}`}>
           <ul>
             <li>
               <Link to="/create-player">Create Player</Link>
@@ -43,6 +52,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

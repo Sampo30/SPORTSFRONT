@@ -1,0 +1,58 @@
+/* styles.css */
+
+/* Set black background */
+body {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  /* Minimalist look for headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Minimalist look for buttons */
+  .btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Styling for table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #fff;
+  }
+  
+  th {
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .header-title {
+    margin: 0;
+  }
+    
