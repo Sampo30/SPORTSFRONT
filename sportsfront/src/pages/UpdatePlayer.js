@@ -38,7 +38,7 @@ const UpdatePlayer = () => {
         updatedPlayer.points = parseInt(pointsRef.current.value.trim());
       }
 
-      const response = await fetch(`http://localhost:3000/players/${id}`, {
+      const response = await fetch(`https://sports-api-o5gx.onrender.com/players/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

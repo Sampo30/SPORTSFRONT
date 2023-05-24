@@ -19,7 +19,7 @@ const CreatePlayer = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3000/players', playerData);
+      const response = await axios.post('https://sports-api-o5gx.onrender.com/players', playerData);
       console.log('Player created:', response.data);
       // Optionally, you can navigate to a different page or display a success message here
     } catch (error) {

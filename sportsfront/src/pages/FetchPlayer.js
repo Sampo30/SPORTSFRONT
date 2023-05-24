@@ -6,7 +6,7 @@ const FetchPlayer = () => {
 
   const fetchPlayerData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/players/' + playerId);
+      const response = await fetch('https://sports-api-o5gx.onrender.com/players/' + playerId);
       
       if (!response.ok) {
         throw new Error('Failed to fetch player data');

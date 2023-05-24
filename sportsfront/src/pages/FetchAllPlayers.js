@@ -5,7 +5,7 @@ const FetchAllPlayers = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/players')
+    fetch('https://sports-api-o5gx.onrender.com/players')
       .then((response) => response.json())
       .then((data) => {
         setPlayers(data);

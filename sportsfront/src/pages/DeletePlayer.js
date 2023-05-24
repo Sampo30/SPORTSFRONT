@@ -5,7 +5,7 @@ const DeletePlayer = () => {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/players/${playerId}`, {
+      const response = await fetch(`https://sports-api-o5gx.onrender.com/players/${playerId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
