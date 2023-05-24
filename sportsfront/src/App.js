@@ -5,6 +5,7 @@ import FetchPlayer from './pages/FetchPlayer';
 import UpdatePlayer from './pages/UpdatePlayer';
 import DeletePlayer from './pages/DeletePlayer';
 import FetchAllPlayers from './pages/FetchAllPlayers';
+import Header from './components/Header'; // Import the Header component
 import './App.css';
 
 
@@ -17,6 +18,7 @@ const App = () => {
 
   return (
     <Router>
+      <Header /> {/* Add the Header component here */}
       <div className="app-container">
         <button className="menu-toggle" onClick={handleMenuToggle}>
           <span className="menu-icon"></span>
